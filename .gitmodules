@@ -1,0 +1,6 @@
+[submodule "open-parlement-backend"]
+	path = open-parlement-backend
+	url = git@github.com:samonaisi/open-parlement-backend.git
+[submodule "open-parlement-frontend"]
+	path = open-parlement-frontend
+	url = git@github.com:samonaisi/open-parlement-frontend.git

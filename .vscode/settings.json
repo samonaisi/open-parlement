@@ -1,0 +1,4 @@
+{
+    "python.analysis.extraPaths": ["./open-parlement-backend"],
+    "python.defaultInterpreterPath": "./open-parlement-backend/.venv/bin/python",
+}
