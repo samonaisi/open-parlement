@@ -4,9 +4,9 @@ services:
     build:
       context: ./open-parlement-backend
       args:
-        EXPORT_FLAG: --dev
+        EXPORT_FLAG: "--with dev"
     env_file:
-      - .env
+      - ./open-parlement-backend/.env
     user: root
     restart: unless-stopped
     command: uvicorn open_parlement.asgi:application --host 0.0.0.0 --port 8000 --reload
@@ -26,7 +26,7 @@ services:
       context: ./open-parlement-frontend
       dockerfile: Dockerfile.dev
     env_file:
-      - .env
+      - ./open-parlement-frontend/.env
     ports:
         - "8080:8080"
     environment:
@@ -38,8 +38,8 @@ services:
   celery:
     build: ./open-parlement-backend
     env_file:
-      - .env
-    command: celery -A open-parlement worker -B -l info
+      - ./open-parlement-backend/.env
+    command: celery -A open_parlement worker -B -l info
     restart: unless-stopped
     depends_on:
       - open-parlement-backend
